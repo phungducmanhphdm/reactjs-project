@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@src": "./src",
+          "@scss": "./src/global/styles",
+          "@assets": "./src/assets",
+          "@components": "./src/components",
+          "@layouts": "./src/layouts",
+          "@pages": "./src/pages",
+          "@routes": "./src/routes",
+          "@utils": "./src/utils",
+          "@global": "./src/global"
+        }
+      }
+    ]
+  ]
+}
