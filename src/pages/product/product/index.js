@@ -1,1 +1,3 @@
 export { default as ProductPage } from "./ProductPage";
+export { default as ProductAddPage } from "./add/ProductAddPage";
+export { default as ProductDetailsPage } from "./details/ProductDetailsPage";

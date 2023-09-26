@@ -1,0 +1,24 @@
+.wrapper {
+  padding: 10px;
+  background-color: rgb(228, 228, 228);
+  border-radius: 5px;
+  .label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .body {
+    .spinner {
+      width: fit-content;
+      height: fit-content;
+    }
+    .input {
+      width: 100%;
+    }
+    .error {
+      font-size: 1rem;
+      font-style: italic;
+      padding: 5px 0px;
+      color: red;
+    }
+  }
+}

@@ -1,9 +1,12 @@
-import { AdminRoutes } from "./routers";
+import { BrowserRouter, Routes } from "react-router-dom";
+import { PageRoute } from "src/routers";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">{AdminRoutes}</header>
+      <BrowserRouter>
+        <Routes>{PageRoute}</Routes>
+      </BrowserRouter>
     </div>
   );
 }

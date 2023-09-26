@@ -1,3 +1,3 @@
-export * from "./details";
 export * from "./product";
-export * from "./add";
+export * from "./type";
+export * from "./group";

@@ -12,7 +12,9 @@
           "@pages": "./src/pages",
           "@routes": "./src/routes",
           "@utils": "./src/utils",
-          "@global": "./src/global"
+          "@global": "./src/global",
+          "@api": "./src/api",
+          "@hooks": "./src/hooks"
         }
       }
     ]
