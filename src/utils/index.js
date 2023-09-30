@@ -29,4 +29,29 @@ function fetchRoute(route, index = 0) {
   }
 }
 
-export { fetchRoute };
+function equalObject(obj1, obj2) {
+  const _obj1 = JSON.stringify(obj1);
+  const _obj2 = JSON.stringify(obj2);
+  return _obj1 === _obj2;
+}
+
+function checkArrInArr(childArr, parentArr, fieldName) {
+  const _arr = parentArr.map((item) => {
+    let status = false;
+    for (let i = 0; i < childArr.length; i++) {
+      const e = childArr[i];
+      if (equalObject(item, e)) {
+        status = true;
+        break;
+      }
+    }
+
+    return {
+      ...item,
+      [fieldName]: status,
+    };
+  });
+  return _arr;
+}
+
+export { fetchRoute, checkArrInArr };

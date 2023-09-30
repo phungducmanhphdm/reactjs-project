@@ -1,0 +1,43 @@
+.wrapper {
+  margin: 10px;
+  .body {
+    .row {
+      &:last-child {
+        margin-bottom: 0;
+      }
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 10px;
+      > * {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .id {
+          margin-right: 10px;
+          &::before {
+            content: "#";
+          }
+        }
+        .name {
+          font-weight: bold;
+        }
+        .edit {
+          margin-right: 10px;
+        }
+        .delete {
+        }
+      }
+      .left {
+        justify-content: flex-start;
+      }
+      .right {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

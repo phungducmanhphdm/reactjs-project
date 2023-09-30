@@ -167,6 +167,63 @@ function Sidebar() {
             </ul>
           </div>
         </div>
+        <div className={`${styles.item} ${styles.dropdown}`}>
+          <div
+            datafor="dropDosageForm"
+            className={styles.dropToggle}
+            onClick={handleDrop}
+          >
+            Dosage form
+          </div>
+          <div id="dropDosageForm" className={`${styles.dropItems}`}>
+            <ul>
+              <li>
+                <Link to="/product/dosageform">All dosage form</Link>
+              </li>
+              <li>
+                <Link to="/product/dosageform/add">Add dosage form</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={`${styles.item} ${styles.dropdown}`}>
+          <div
+            datafor="dropNation"
+            className={styles.dropToggle}
+            onClick={handleDrop}
+          >
+            Nation
+          </div>
+          <div id="dropNation" className={`${styles.dropItems}`}>
+            <ul>
+              <li>
+                <Link to="/nation">All nation</Link>
+              </li>
+              <li>
+                <Link to="/nation/add">Add nation</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={`${styles.item} ${styles.dropdown}`}>
+          <div
+            datafor="dropbrand"
+            className={styles.dropToggle}
+            onClick={handleDrop}
+          >
+            Brand
+          </div>
+          <div id="dropbrand" className={`${styles.dropItems}`}>
+            <ul>
+              <li>
+                <Link to="/brand">All brand</Link>
+              </li>
+              <li>
+                <Link to="/brand/add">Add brand</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

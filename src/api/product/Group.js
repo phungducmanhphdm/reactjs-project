@@ -12,6 +12,17 @@ class Group {
     this.instance.get().then(cb1).catch(cb2);
   }
 
+  getByType(typeId, cb1, cb2) {
+    this.instance
+      .get("", {
+        params: {
+          type: typeId,
+        },
+      })
+      .then(cb1)
+      .catch(cb2);
+  }
+
   checkName(typeName, cb1, cb2) {
     this.instance
       .get("/check", { params: { field: "name", value: typeName } })
@@ -22,6 +33,17 @@ class Group {
   create(groupName, typeId, cb1, cb2) {
     this.instance
       .post("", { id: 0, name: groupName, typeId: typeId })
+      .then(cb1)
+      .catch(cb2);
+  }
+
+  delete(groupId, cb1, cb2) {
+    this.instance
+      .delete("", {
+        params: {
+          id: groupId,
+        },
+      })
       .then(cb1)
       .catch(cb2);
   }

@@ -1,0 +1,38 @@
+.wrapper {
+  padding: 10px;
+  .label {
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+  .body {
+    width: 100%;
+    .spinner {
+    }
+    .searchbox {
+      width: 100%;
+      margin-bottom: 10px;
+      input {
+        width: 100%;
+      }
+    }
+    .content {
+      .items {
+        max-height: 250px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .item {
+          margin-top: 10px;
+          label {
+            margin-left: 5px;
+            display: -webkit-inline-box;
+            -webkit-line-clamp: 1; /* Số dòng muốn hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis; /* Thêm dấu "..." khi nội dung tràn ra ngoài */
+            white-space: normal;
+          }
+        }
+      }
+    }
+  }
+}

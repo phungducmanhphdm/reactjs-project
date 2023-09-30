@@ -12,18 +12,34 @@ function SelectBox({
   disabled,
   loading,
   checkValid,
+  errorInfo,
 }) {
   const [valid, setValid] = useState({ status: true, message: "" });
   const [value, setValue] = useState(defaultValue);
 
   useLayoutEffect(() => {
-    //Khởi tạo giá trị của input ở parent
-    const e = { target: { value: value, type: "select-one" } };
-    if (checkValid === true) {
-      setValid(handleValid(e));
+    if (errorInfo) {
+      setValid(errorInfo);
+    } else {
+      const e = { target: { value: value, type: "select" } };
+      if (checkValid) {
+        setValid(handleValid(e));
+      }
     }
     return () => {};
   }, [checkValid]);
+
+  useLayoutEffect(() => {
+    if (errorInfo) {
+      setValid(errorInfo);
+    }
+    return () => {};
+  }, [errorInfo]);
+
+  useLayoutEffect(() => {
+    setValue(defaultValue);
+    return () => {};
+  }, [defaultValue]);
 
   return (
     <div className={styles.wrapper}>
@@ -40,8 +56,9 @@ function SelectBox({
               value={value}
               onChange={(e) => {
                 setValue(e.target.value);
-                setValid(handleValid(e));
-                handleChange({ id, e, valid });
+                const validInfo = handleValid(e);
+                setValid(validInfo);
+                handleChange({ id, e, valid: validInfo });
               }}
               disabled={disabled}
             >

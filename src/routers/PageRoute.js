@@ -1,8 +1,10 @@
 import { Route } from "react-router-dom";
 
-import ProductRoute from "./product/ProductRoute";
 import { AdminLayout } from "@layouts";
 import { HomePage } from "@pages";
+import ProductRoute from "./product/ProductRoute";
+import NationRoute from "./nation/Nation";
+import BrandRoute from "./brand/Brand";
 
 const PageRoute = (
   <Route path="/">
@@ -25,6 +27,8 @@ const PageRoute = (
     />
 
     {ProductRoute}
+    {NationRoute}
+    {BrandRoute}
   </Route>
 );
 

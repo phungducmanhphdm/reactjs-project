@@ -33,24 +33,35 @@ function AddGroupPage() {
   const handleInput = ({ id, e, valid }) => {
     const value = e.target.value;
     setData((pre) => ({ ...pre, [id]: { value: value, valid: valid } }));
-    console.log(data);
   };
 
   const sendData = () => {
-    if (data.groupName.valid.status === false || data.typeId.valid.status) {
+    if (
+      data.groupName.valid.status === false ||
+      data.typeId.valid.status === false
+    ) {
       setCheckValid(true);
       return;
     }
 
     setSending(true);
 
+    const groupName = data.groupName.value;
+    const typeId = data.typeId.value;
+
+    console.log({ groupName, typeId });
+
     Group.create(
-      data.name,
+      groupName,
+      typeId,
       (res) => {
+        console.log(res);
         alert("Đã thêm");
         setSending(false);
       },
       (err) => {
+        console.log(err);
+
         alert("Lỗi");
         setSending(false);
       }
@@ -63,6 +74,10 @@ function AddGroupPage() {
   const [textBoxErrorInfo, setTextBoxErrorInfo] = useState(null);
   const [data, setData] = useState({
     groupName: {
+      value: "",
+      valid: { status: false, message: "Empty" },
+    },
+    typeId: {
       value: "",
       valid: { status: false, message: "Empty" },
     },
@@ -108,6 +123,7 @@ function AddGroupPage() {
       },
       (err) => {
         setLoad((pre) => !pre);
+        alert("Load type list failed");
       }
     );
   }, [load]);
@@ -128,7 +144,8 @@ function AddGroupPage() {
             disabled={sending === true}
             errorInfo={textBoxErrorInfo}
           />
-
+        </div>
+        <div className={styles.selectbox}>
           <SelectBox
             label="Type"
             loadding={false}
@@ -137,6 +154,7 @@ function AddGroupPage() {
             handleValid={handleValid}
             handleChange={handleInput}
             checkValid={checkValid}
+            defaultValue={data.typeId.value}
             data={[{ value: "", name: "Select type" }, ...typeList.data]}
             disabled={sending === true}
             loading={typeList.status === 0}

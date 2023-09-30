@@ -57,7 +57,7 @@ function TextBox({
                   setValue(e.target.value);
                   const validInfo = handleValid(e);
                   setValid(validInfo);
-                  handleChange({ id, e, valid });
+                  handleChange({ id, e, valid: validInfo });
                 }}
                 disabled={disabled === true}
               />
@@ -71,7 +71,7 @@ function TextBox({
                   setValue(e.target.value);
                   const validInfo = handleValid(e);
                   setValid(validInfo);
-                  handleChange({ id, e, valid });
+                  handleChange({ id, e, valid: validInfo });
                 }}
                 disabled={disabled === true}
               />

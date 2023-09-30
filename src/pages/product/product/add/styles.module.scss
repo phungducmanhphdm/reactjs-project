@@ -1,0 +1,10 @@
+.wrapper {
+  margin: 10px;
+  .body {
+    > div {
+      margin-bottom: 10px;
+    }
+  }
+  .waittingPanel {
+  }
+}

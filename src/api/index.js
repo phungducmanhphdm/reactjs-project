@@ -1,2 +1,11 @@
 export { default as Type } from "./product/Type";
 export { default as Group } from "./product/Group";
+export { default as Category } from "./product/Category";
+export { default as SpecifyFor } from "./product/SpecifyFor";
+export { default as DosageForm } from "./product/DosageForm";
+export { default as Ingredient } from "./product/Ingredient";
+export { default as Unit } from "./product/Unit";
+export { default as UseFor } from "./product/UseFor";
+export { default as Nation } from "./others/Nation";
+export { default as Brand } from "./others/Brand";
+export { default as Product } from "./product/Product";
